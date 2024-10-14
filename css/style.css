@@ -609,6 +609,9 @@ b, strong {
   height: 100vh; /* Ensures full height of the viewport */
   background-size: cover;
 }
+@media (max-width: 420px){
 #resume{
-  margin-top: 100px;
+  margin-top: 200px;
 }
+}
+
