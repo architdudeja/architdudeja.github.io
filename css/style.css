@@ -1,5 +1,7 @@
 
-
+html{
+  background-image: url("/images/bg.jpg")
+}
 
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
 body {
@@ -38,14 +40,14 @@ a:hover {
 }
 
 .navbar-brand .uil {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 p {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
-  color: #5b5b5b;
+  color: black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,9 +113,6 @@ b, strong {
 
 .animated-item {
   color: #3B7BFB;
-}
-
-.animated-item {
   font-size: 38px;
   line-height: inherit;
   display: block;
@@ -127,9 +126,11 @@ b, strong {
 }
 .animated-item:nth-child(2n+2) {
   animation-delay: 2s;
+  color: rgba(14, 199, 45, 0.767);
 }
 .animated-item:nth-child(3n+3) {
   animation-delay: 4s;
+  color: #A100FF;
 }
 
 @keyframes BottomTotop {
@@ -186,7 +187,7 @@ b, strong {
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .nav-link {
@@ -613,5 +614,14 @@ b, strong {
 #resume{
   margin-top: 200px;
 }
+}
+.social-link {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.social-link:hover {
+  color: #007bff;
 }
 
