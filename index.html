@@ -15,10 +15,7 @@
   <meta name="description" content="Portfolio">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Archit Dudeja">
-  <meta name="generator" content="Themefisher Kross Template v1.0">
-  
-  <!-- theme meta -->
-  <meta name="theme-name" content="kross" />
+  <meta name="generator" content="Portfolio Template">
   
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/icon.ico" />
@@ -29,6 +26,8 @@
   <link rel="stylesheet" href="plugins/slick/slick.css">
   <!-- themefy-icon -->
   <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- Main Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
@@ -69,14 +68,17 @@
 <section class="hero-area bg-primary" id="parallax">
   <div class="container">
     <div class="row">
-      <div class="col-lg-11 mx-auto">
+      <div class="col-lg-12 mx-auto">
         <h1 class="text-white font-tertiary">Hi ! I’m <br> Archit Dudeja <br> Business Data Analyst</h1>
-        <a href="https://drive.google.com/file/d/1S_8bBAADVAan-sXZr38k7oAN9zoQVA25/view?usp=sharing" target="_blank" class="btn btn-danger">Resume</a> 
-        <a href="#Experience" class="scroll-to-next">
+        <a href="https://drive.google.com/file/d/1S_8bBAADVAan-sXZr38k7oAN9zoQVA25/view?usp=sharing" target="_blank" class="btn btn-danger">Resume</a>
+      </div>
+      <div class="col-lg-12 mx-auto">
+        <div class="scroll-to-next" id="scrollButton">
           <img src="/images/scroll2.gif" alt="Scroll Down">
-        </a>
+          <img src="/images/scroll2.gif" alt="Scroll Down">
       </div>
     </div>
+  </div>
   </div>
   
   <div class="layer-bg w-100">
@@ -106,26 +108,58 @@
   <div class="layer" id="l9">
     <img src="images/illustrations/leaf-cyan-2.png" alt="bg-shape">
   </div>
+
   <!-- social icon -->
-  <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
-    <li class="mb-4"><a class="text-white" href="https://github.com/architdudeja"><i class="ti-github"></i></a></li>
-    <li class="mb-4"><a class="text-white" href="https://www.linkedin.com/in/archit-dudeja/"><i class="ti-linkedin"></i></a></li>
-    <li class="mb-4"><a class="text-white" href="mailto:archit.dudeja@outlook.com"><i class="ti-email"></i></a></li>
-    
+  <ul class="social-icons">
+    <li><a class="github" href="https://github.com/architdudeja" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+    <li><a class="linkedin" href="https://www.linkedin.com/in/archit-dudeja/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+    <li><a class="email" href="mailto:archit.dudeja@outlook.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
   </ul>
   <!-- /social icon -->
 </section>
 <!-- /hero area -->
 
+<section class="sect" id="sect">
+  <br>
+  <br>
+<div class="container py-8">
+  <!-- Navigation Tabs -->
+  <ul class="nav nav-tabs justify-content-center mb-4" id="sectionTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="experience-tab" data-bs-toggle="tab" 
+                  data-bs-target="#experience" type="button" role="tab">
+              Experience
+          </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="education-tab" data-bs-toggle="tab" 
+                data-bs-target="#education" type="button" role="tab">
+            Education
+        </button>
+    </li>
+      <li class="nav-item" role="presentation">
+          <button class="nav-link" id="projects-tab" data-bs-toggle="tab" 
+                  data-bs-target="#projects" type="button" role="tab">
+              Projects
+          </button>
+      </li>
+      <li class="nav-item" role="presentation">
+          <button class="nav-link" id="skills-tab" data-bs-toggle="tab" 
+                  data-bs-target="#skills" type="button" role="tab">
+              Skills
+          </button>
+      </li>
+  </ul>
 
-<!-- experience -->
-<section class="section experience" id="Experience">
-  <div class="container">
-    <div class="row justify-content-around">
+<!-- Sections -->
+<div class="tab-content" id="sectionTabContent">
+  <!-- Experience Section -->
+  <div class="tab-pane fade show active" id="experience" role="tabpanel">
+      <div class="section-container">
       <div class="col-lg-12 text-center">
-        <h2 class="section-title exp-title" >Experience</h2>
+        <h2 class="section-title sect-title" >Experience</h2>
       </div>
-      <div class="col-lg-10 col-md-12">
+      <div class="col-lg-12 col-md-12">
         <div class="experience-card">
           <div class="left-section">
             <img src="/images/experience/UofU.png" alt="Organization Logo">
@@ -143,13 +177,12 @@
             </ul>
           </div>
         </div>
-        
-      </div>
-      </div>
+        </div>
+      
       <br>
       <br>
-      <div class="row justify-content-around">
-      <div class="col-lg-10 col-md-12 ">
+      
+      <div class="col-lg-12 col-md-12 ">
         <div class="experience-card">
           <div class="left-section">
             <img src="/images/experience/Accenture.png" alt="Organization Logo">
@@ -170,11 +203,10 @@
           </div>
         </div>
       </div>
-      </div>
+
       <br>
       <br>
-      <div class="row justify-content-around">
-      <div class="col-lg-10 col-md-12 ">
+      <div class="col-lg-12 col-md-12 ">
         <div class="experience-card">
           <div class="left-section">
             <img src="/images/experience/panch.png" alt="Organization Logo">
@@ -195,368 +227,231 @@
       </div>
     </div>
   </div>
-</section>
-<!-- ./experience -->
-
-<!-- services -
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Services</h2>
-      </div>
-      <div class="col-md-4 mb-4 mb-md-0">
-        <div class="card hover-shadow shadow">
-          <div class="card-body text-center px-4 py-5">
-            <i class="ti-palette icon mb-5 d-inline-block"></i>
-            <h4 class="mb-4">UI Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 mb-md-0">
-        <div class="card active-bg-primary hover-shadow shadow">
-          <div class="card-body text-center px-4 py-5">
-            <i class="ti-vector icon mb-5 d-inline-block"></i>
-            <h4 class="mb-4">UX Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 mb-md-0">
-        <div class="card hover-shadow shadow">
-          <div class="card-body text-center px-4 py-5">
-            <i class="ti-panel icon mb-5 d-inline-block"></i>
-            <h4 class="mb-4">Interaction Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- /services -->
-
-<!-- portfolio 
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Portfolio</h2>
-      </div>
-    </div>
-    <div class="row shuffle-wrapper">
-      <div class="col-lg-4 col-6 mb-4 shuffle-item">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="images/portfolio/item-1.png" alt="portfolio-image" class="img-fluid rounded w-100">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="#!">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-6 mb-4 shuffle-item">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="images/portfolio/item-2.png" alt="portfolio-image" class="img-fluid rounded w-100">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="#!">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-6 mb-4 shuffle-item">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="images/portfolio/item-3.png" alt="portfolio-image" class="img-fluid rounded w-100">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="#!">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-6 mb-4 shuffle-item">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="images/portfolio/item-4.png" alt="portfolio-image" class="img-fluid rounded w-100">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="#!">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-6 mb-4 shuffle-item">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="images/portfolio/item-5.png" alt="portfolio-image" class="img-fluid rounded w-100">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="#!">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- /portfolio -->
-
-<!-- testimonial -
-<section class="section bg-primary position-relative testimonial-bg-shapes">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title text-white mb-5">Testimonials</h2>
-      </div>
-      <div class="col-lg-10 mx-auto testimonial-slider">
-       
-        <div class="text-center testimonial-content">
-          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-          <p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation
-              ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="images/testimonial/client-1.png"
-            alt="client-image">
-          <h4 class="text-white">Jesica Gomez</h4>
-          <h6 class="text-light mb-4">CEO, Funder</h6>
-        </div>
-       
-        <div class="text-center testimonial-content">
-          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-          <p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation
-              ullamco
-              laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in
-            voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.</p>
-          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="images/testimonial/client-1.png"
-            alt="client-image">
-          <h4 class="text-white">Jesica Gomez</h4>
-          <h6 class="text-light mb-4">CEO, Funder</h6>
-        </div>
-       
-        <div class="text-center testimonial-content">
-          <i class="ti-quote-right text-white icon mb-4 d-inline-block"></i>
-          <p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation
-              ullamco
-              laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in
-            voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.</p>
-          <img class="img-fluid rounded-circle mb-4 d-inline-block" src="images/testimonial/client-1.png"
-            alt="client-image">
-          <h4 class="text-white">Jesica Gomez</h4>
-          <h6 class="text-light mb-4">CEO, Funder</h6>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <img src="images/backgrounds/map.png" alt="map" class="img-fluid bg-map">
-  <img src="images/illustrations/dots-group-v.png" alt="bg-shape" class="img-fluid bg-shape-1">
-  <img src="images/illustrations/leaf-orange.png" alt="bg-shape" class="img-fluid bg-shape-2">
-  <img src="images/illustrations/dots-group-sm.png" alt="bg-shape" class="img-fluid bg-shape-3">
-  <img src="images/illustrations/leaf-pink-round.png" alt="bg-shape" class="img-fluid bg-shape-4">
-  <img src="images/illustrations/leaf-cyan.png" alt="bg-shape" class="img-fluid bg-shape-5">
-</section>
- /testimonial -->
 
 
 
-<section class="project section" id="projects">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Projects</h2>
-      </div>
-      <div class="col-8 offset-2">
-      <div class="project-card text-center">
-        <h1>Cardiovascular Health Insights (Tableau Project)</h1>
-        <h2>Data Visualization | Tableau</h2>
-        <img src="/images/blog/Cardio Vascular.png" alt="Amazon-themed sales dashboard">
-        <div class="project-details text-left">
-          <p><strong>Project Overview:</strong> Analyzed health metrics of individuals who experienced cardiac events </p>
-          <ul>
-            <li><strong>Business Impact:</strong> The project emphasizes identifying risk factors and aiding data-driven health decisions.</li>
-            <li><strong>Data Integration:</strong> Combined data from multiple sources with 100% accuracy, utilizing data cleaning techniques to ensure reliability.</li>
-            <li><strong>Key Performance Metrics:</strong> Devised dynamic paramterization and calculated metrics illuminating high-performing factors for executive decisions.</li>
+  <div class="tab-pane fade" id="projects" role="tabpanel">
+    <div class="section-container">
+        <div class="container">
+            <h2 class="sect-title text-center mb-5">Projects</h2>
+
+            <!-- Project Details Container -->
+            <div class="carousel-wrapper">
+              <button class="carousel-arrow left">&lt;</button>
+              <div class="carousel">
+                <div class="carousel-track">
+                  <!-- Slide 1 -->
+                  <div class="carousel-slide">
+                    <a href="https://public.tableau.com/app/profile/archit.dudeja3594/viz/CVDataAnalysis/Summary" target="_blank"> <h2>Cardiovascular Health Insights (Tableau Project)</h2></a>
+                    <h4>Data Visualization | Tableau</h4>
+                    <img src="/images/blog/Cardio Vascular.png" alt="Cardiovascular Health Insights">
+                    <div class="content">
+                      <p><strong>Project Overview:</strong> Analyzed health metrics of individuals who experienced cardiac events.</p>
+                      <h5>Business Impact</h5>
+                      <p>The project emphasizes identifying risk factors and aiding data-driven health decisions.</p>
+                      <h5>Data Integration</h5>
+                      <p>Combined data from multiple sources with 100% accuracy, utilizing data cleaning techniques to ensure reliability.</p>
+                      <h5>Key Performance Metrics</h5>
+                      <p>Devised dynamic parameterization and calculated metrics illuminating high-performing factors for executive decisions.</p>
+                    </div>
+                  </div>
             
-          </ul>
-        </div>
-      </div>
-      </div>
-      </div>
-      <br> 
-      <!--
-      <div class="row">
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <article class="card shadow">
-          <img class="port rounded card-img-top" src="images/blog/Cardio Vascular.png" alt="post-thumb" >
-          <div class="card-body">
-            <h4 class="card-title"><a class="text-dark" href="blog-single.html">Cardiovascular Health Insights (Tableau Project)</a>
-            </h4>
-            <p class="cars-text">Analyzed health metrics of individuals who experienced cardiac events to uncover key patterns. Developed an interactive Tableau dashboard to visualize data trends and provide actionable insights. The project emphasizes identifying risk factors and aiding data-driven health decisions.</p>
-            <a href="#" class="btn btn-xs btn-primary">Read More</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <article class="card shadow">
-          <img class="port rounded card-img-top" src="images/blog/Primary Healthcare.png" alt="post-thumb">
-          <div class="card-body">
-            <h4 class="card-title"><a class="text-dark" href="blog-single.html">Capstone with Intermountain Health</a>
-            </h4>
-            <p class="cars-text">Collaborated with a primary healthcare hospital to analyze data on five key health metrics. Designed visually compelling dashboards to help doctors illustrate how habits influence heart health to patients. This project focused on making data approachable for medical practitioners and their patients.</p>
-            <a href="#" class="btn btn-xs btn-primary">Read More</a>
-          </div>
-        </article>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <article class="card shadow">
-          <img class="port rounded card-img-top" src="images/blog/Client Population.png" alt="post-thumb">
-          <div class="card-body">
-            <h4 class="card-title"><a class="text-dark" href="https://public.tableau.com/app/profile/archit.dudeja3594/viz/PatientPopulationAnalysis/Overview">Patient Cancer Screening Dashboard</a>
-            </h4>
-            <p class="cars-text">Created a dashboard to explore trends in cancer screening data, analyzing factors such as age, location, and visit patterns. Addressed challenges like dynamic parameterization and demographic insights to improve healthcare understanding. This project highlights actionable insights through data visualization.</p>
-            <a href="https://public.tableau.com/app/profile/archit.dudeja3594/viz/PatientPopulationAnalysis/Overview" class="btn btn-xs btn-primary">Read More</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
--->
-<!-- skills -->
-<section class="section" id="skills">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-title">Skills</h2>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card shadow text-center">
-          <div class="position-relative rounded-top progress-wrapper" data-color="#fdb157">
-            <div class="wave" data-progress="90%"></div>
-          </div>
-          <div class="card-footer bg-white">
-            <h4 class="card-title">Data Visualization</h4>
-            <p>Tableau, Power BI, Google Looker, Microsoft Excel, DOMO </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card shadow text-center">
-          <div class="position-relative rounded-top progress-wrapper" data-color="#9473e6">
-            <div class="wave" data-progress="70%"></div>
-          </div>
-          <div class="card-footer bg-white">
-            <h4 class="card-title">Programming</h4>
-            <p>R (Tidyverse, dplyr), SQL (PostgreSQL, Oracle SQL),  Python (Pandas, NumPy, Scikit)</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card shadow text-center">
-          <div class="position-relative rounded-top progress-wrapper" data-color="#bdecf6">
-            <div class="wave" data-progress="80%"></div>
-          </div>
-          <div class="card-footer bg-white">
-            <h4 class="card-title">Technologies </h4>
-            <p>SSIS, SSRS, MongoDB, Apache Airflow, Snowflake, Amazon S3</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card shadow text-center">
-          <div class="position-relative rounded-top progress-wrapper" data-color="#ffbcaa">
-            <div class="wave" data-progress="70%"></div>
-          </div>
-          <div class="card-footer bg-white">
-            <h4 class="card-title">Analysis</h4>
-            <p> Statistical Analysis, A/B Testing, Ad Hoc Analysis, Hypothesis Testing</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-        <div class="card shadow text-center">
-          <div class="position-relative rounded-top progress-wrapper" data-color="#EF798A">
-            <div class="wave" data-progress="80%"></div>
-          </div>
-          <div class="card-footer bg-white">
-            <h4 class="card-title">Forecasting</h4>
-            <p>Financial Modeling, Time Series Forecasting, Regression, Neural Networks, Decision Trees </p>
-          </div>
-        </div>
-      </div>
-    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-      <div class="card shadow text-center">
-        <div class="position-relative rounded-top progress-wrapper" data-color="#FFF689">
-          <div class="wave" data-progress="100%"></div>
-        </div>
-        <div class="card-footer bg-white">
-          <h4 class="card-title">Management</h4>
-          <p>Business Reporting, Critical Thinking, Process Optimization, Stakeholder Management</p>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-</section>
-<!-- /skills -->
+                  <!-- Slide 2 -->
+                  <div class="carousel-slide">
+                    <a href="https://public.tableau.com/app/profile/archit.dudeja3594/viz/PatientPopulationAnalysis/Overview" target="_blank"><h2>Cancer Screening Dashboard</h2></a>
+                    <h4>Data Visualization | Tableau</h4>
+                    <img src="images/blog/Client Population.png" alt="Sales Analytics Dashboard">
+                    <div class="content">
+                      <p><strong>Project Overview:</strong> A dynamic dashboard to explore patterns in patient data, with a focus on cancer screening status.</p>
+                      <h5>Business Impact</h5>
+                      <p>Age and location trends in screenings.<br>
+                        Insights into how language, diversity, and time of year influence care patterns.<br>
+                        Connections between visit dates, providers, and visit locations.
+                      </p>
+                      <h5>Key Performance Metrics</h5>
+                      <p>🔍 Making one dashboard handle dynamic parameterization so all critical data points are at your fingertips.<br>
+                        📊 Analyzing relationships between patient demographics and provider interactions.<br>
+                        🌐 Visualizing patterns and trends that inform healthcare decisions.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-arrow right">&gt;</button>
+            </div>
+                        </div>
+                    </div>
+                </div>
 
+
+    
+<div class="tab-pane fade" id="education" role="tabpanel">
+  <div class="section-container">
+      <div class="container">
+          <h2 class="sect-title text-center mb-5">Education</h2>
+          
+          <div class="education-timeline">
+              <div class="timeline-track"></div>
+
+              <!-- Masters Degree -->
+              <div class="education-card left">
+                  <span class="year-badge">2023 - 2024</span>
+                  <h3 class="degree-title">Graduate Certificate in Business Analytics</h3>
+                  <p class="institution">University of Utah</p>
+                  <ul class="achievements">
+                      <li>GPA: 4.0/4.0</li>
+                      <li>Machine Learning, Data Mining</li>
+                      <li>Teaching Assistant in Data Science Lab</li>
+                     
+                  </ul>
+              </div>
+
+              <!-- Bachelors Degree -->
+              <div class="education-card right">
+                  <span class="year-badge">2023 - 2024</span>
+                  <h3 class="degree-title">Masters of Science in Information Systems</h3>
+                  <p class="institution">University of Utah</p>
+                  <ul class="achievements">
+                    <li>GPA: 3.9/4.0</li>
+                      <li>Major in Computer Science with focus on Data Structures</li>
+                      <li>Technical Lead of College Coding Club</li>
+                  </ul>
+              </div>
+
+              <!-- Additional Certification -->
+              <div class="education-card left">
+                  <span class="year-badge">2021</span>
+                  <h3 class="degree-title">Bachelors of Technology in Computer & Communication Engineering</h3>
+                  <p class="institution">Manipal University Jaipur</p>
+                  <ul class="achievements">
+                    <li>GPA: 8.07/10.0</li>
+                      <li>Developed real-world projects using Python and R</li>
+                      <li>Advanced certification in Machine Learning</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+ 
+      <div class="tab-pane fade" id="skills" role="tabpanel">
+        <div class="section-container">
+            <h2 class="sect-title text-center mb-5">Skills</h2>
+            <div class="row g-4">
+                <!-- Visualization Card -->
+                <div class="col-md-4 col-lg-4">
+                    <div class="card skills-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Visualization</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="skills-grid">
+                                <li><i class="fas fa-chart-bar"></i> Tableau</li>
+                                <li><i class="fas fa-chart-line"></i> Power BI</li>
+                                <li><i class="fas fa-chart-pie"></i> Domo</li>
+                                <li><i class="fas fa-chart-area"></i> Looker</li>
+                                <li><i class="fas fa-chart-column"></i> Excel</li>
+                                <li><i class="fab fa-python"></i> Matplotlib</li>
+                              </ul>
+                        </div>
+                    </div>
+                </div>
+               
+
+                <!-- Programming Card -->
+                <div class="col-md-4 col-lg-4">
+                    <div class="card skills-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Programming</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="skills-grid">
+                                <li><i class="fab fa-python"></i> Python</li>
+                                <li><i class="fab fa-js"></i> JavaScript</li>
+                                <li><i class="fas fa-database"></i> SQL</li>
+                                <li><i class="fab fa-r-project"></i> R</li>
+                                <li><i class="fab fa-php"></i> PHP</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Database Management Card -->
+                <div class="col-md-4 col-lg-4">
+                  <div class="card skills-card">
+                      <div class="card-header">
+                          <h5 class="card-title">Database Management</h5>
+                      </div>
+                      <div class="card-body">
+                          <ul class="skills-grid">
+                              <li><i class="fas fa-database"></i> MySQL</li>
+                              <li><i class="fas fa-database"></i> PostgreSQL</li>
+                              <li><i class="fas fa-leaf"></i> MongoDB</li>
+                              <li><i class="fas fa-database"></i> Oracle</li>
+                              <li><i class="fas fa-database"></i> SQLite</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+                <!-- Data Analysis Card -->
+                <div class="col-md-6 col-lg-6 px-2">
+                    <div class="card skills-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Data Analysis</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="skills-grid">
+                                <li><i class="fas fa-calculator"></i> Statistical Analysis</li>
+                                <li><i class="fas fa-brain"></i> Machine Learning</li>
+                                <li><i class="fas fa-chart-column"></i>Hypothesis Testing</li>
+                                <li><i class="fas fa-magnifying-glass-chart"></i> Data Mining</li>
+                                <li><i class="fas fa-arrow-trend-up"></i>A/B Testing</li>
+                                <li><i class="fas fa-cluster"></i>Time Series Forecasting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+              
+               
+                
+
+                <!-- Tools & Frameworks Card -->
+                <div class="col-md-6 col-lg-6 px-2">
+                    <div class="card skills-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Business & Product</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="skills-grid">
+                                <li><i class="fab fa-git-alt"></i> Agile Methodology</li>
+                                <li><i class="fab fa-docker"></i> Feature Engineering</li>
+                                <li><i class="fab fa-jenkins"></i> Product owner</li>
+                                <li><i class="fa-brands fa-product-hunt"></i> Product Management</li>
+                                <li><i class="fab fa-react"></i> Process Optimization</li>
+                                <li><i class="fab fa-vuejs"></i> Automation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- about -->
-<section class="section">
+<section class="sect-abt section">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 mx-auto text-center">
-        <p class="font-secondary paragraph-lg text-dark">Results-driven Business Intelligence and Data Analyst with a strong background in creating data-driven solutions to enhance business
-          performance and operational efficiency. Skilled in leveraging advanced data analysis tools and techniques to solve complex problems,
-          strengthen decision-making processes, and streamline operations.</p>
+        
         <a href="about.html" class="btn btn-primary">know more</a>
       </div>
     </div>
   </div>
-</section>
-<!-- /about --
-<section class="section pb-0">
-  <div class="container">
-    <div class="client-logo-slider d-flex align-items-center">
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/experience/Accenture.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/experience/panch.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/clients-logo/client-logo-1.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/clients-logo/client-logo-2.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/clients-logo/client-logo-3.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/clients-logo/client-logo-4.png" alt="client-logo"></a>
-      <a href="contact.html" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
-          src="images/clients-logo/client-logo-5.png" alt="client-logo"></a>
-    </div>
-  </div>
-</section>
-
 
 <!-- contact -->
-<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
+ <br>
+ <br>
+<div class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
@@ -611,15 +506,11 @@
 
 <!-- jQuery -->
 <script src="plugins/jQuery/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
-<!-- slick slider -->
-<script src="plugins/slick/slick.min.js"></script>
-<!-- filter -->
-<script src="plugins/shuffle/shuffle.min.js"></script>
 
 <!-- Main Script -->
 <script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

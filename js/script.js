@@ -1,9 +1,48 @@
+document.getElementById('scrollButton').addEventListener('click', () => {
+    const targetSection = document.getElementById('sect');
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  });
 
+// Vanilla JS Carousel Logic
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const prevButton = document.querySelector('.carousel-arrow.left');
+  const nextButton = document.querySelector('.carousel-arrow.right');
+  const slideWidth = slides[0].getBoundingClientRect().width;
 
+  // Arrange slides side by side
+  slides.forEach((slide, index) => {
+    slide.style.left = `${index * 100}%`;
+  });
+
+  let currentIndex = 0;
+
+  const moveToSlide = (track, currentIndex) => {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+  };
+
+  // Event listeners
+  prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex -= 1;
+      moveToSlide(track, currentIndex);
+    } else {
+      currentIndex = slides.length - 1; // Loop back to last slide
+      moveToSlide(track, currentIndex);
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+      currentIndex += 1;
+      moveToSlide(track, currentIndex);
+    } else {
+      currentIndex = 0; // Loop back to first slide
+      moveToSlide(track, currentIndex);
+    }
+  });
 (function ($) {
     'use strict';
-
-
 
     // Sticky Menu
     $(window).scroll(function () {
@@ -88,56 +127,6 @@
     }
     /* ########################################### /hero parallax ############################################## */
 
-    // testimonial-slider
-    $('.testimonial-slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        arrows: false,
-        adaptiveHeight: true
-    });
-
-
-    // clients logo slider
-    $('.client-logo-slider').slick({
-        infinite: true,
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        autoplay: true,
-        dots: false,
-        arrows: false,
-        responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 400,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    });
-
     // Shuffle js filter and masonry
     var Shuffle = window.Shuffle;
     var jQuery = window.jQuery;
@@ -154,6 +143,71 @@
         }
     });
 
-
-
 })(jQuery);
+
+
+document.querySelectorAll('#sectionTabs .nav-link').forEach(tab => {
+    tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-bs-target');
+        const targetElement = document.querySelector(targetId);
+        
+        // Smooth scroll to section
+        targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        // Update active tab
+        document.querySelectorAll('#sectionTabs .nav-link').forEach(t => {
+            t.classList.remove('active');
+        });
+        this.classList.add('active');
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('projectCarousel');
+    const projects = document.querySelectorAll('.featured-project');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+
+    // Function to update active project
+    function updateActiveProject(projectId) {
+        // Hide all projects
+        projects.forEach(project => {
+            project.classList.remove('active');
+        });
+        
+        // Show selected project
+        const activeProject = document.querySelector(`.featured-project[data-project="${projectId}"]`);
+        if (activeProject) {
+            activeProject.classList.add('active');
+        }
+    }
+
+    // Handle carousel slide event
+    carousel.addEventListener('slide.bs.carousel', function(event) {
+        const projectId = event.relatedTarget.dataset.project;
+        updateActiveProject(projectId);
+    });
+
+    // Make carousel items clickable
+    carouselItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const projectId = this.dataset.project;
+            updateActiveProject(projectId);
+            
+            // Update carousel to show clicked item
+            const carousel = bootstrap.Carousel.getInstance(document.getElementById('projectCarousel'));
+            carousel.to(Array.from(carouselItems).indexOf(this));
+        });
+    });
+
+    // Handle image loading
+    document.querySelectorAll('.carousel-image').forEach(img => {
+        img.addEventListener('load', function() {
+            this.classList.add('loading-image');
+        });
+    });
+});
