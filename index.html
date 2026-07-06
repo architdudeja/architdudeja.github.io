@@ -1,516 +1,459 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Archit Dudeja — Business Data Analyst</title>
+<meta name="description" content="Portfolio of Archit Dudeja, Business Data Analyst — BI dashboards, predictive analytics and data storytelling." />
 
-  <!-- Basic Page Needs
-  ================================================== -->
-  <meta charset="utf-8">
-  <title>Archit Dudeja's Portfolio </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
 
-  <!-- Mobile Specific Metas
-  ================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Portfolio">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Archit Dudeja">
-  <meta name="generator" content="Portfolio Template">
-  
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="images/icon.ico" />
-  
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- slick slider -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <!-- themefy-icon -->
-  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
 
-<header class="navigation fixed-top">
-  <nav class="navbar navbar-expand-md navbar-dark">
-    <a href="index.html"><img src="images/adlogo.png" alt="Archit Dudeja" height="2%" width="2%" ></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!-- Chart-canvas backdrop -->
+<div class="grid-backdrop" aria-hidden="true">
+  <div class="grid-dots"></div>
+  <div class="axis axis--x"></div>
+  <div class="axis axis--y"></div>
+</div>
 
-    <div class="collapse navbar-collapse text-center" id="navigation">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        
-      </ul>
-    </div>
+<!-- Custom crosshair cursor -->
+<div class="crosshair" id="crosshair" aria-hidden="true">
+  <div class="crosshair__x" id="crosshairX"></div>
+  <div class="crosshair__y" id="crosshairY"></div>
+  <div class="crosshair__tag" id="crosshairTag">35% ↑</div>
+</div>
+
+<!-- Top bar -->
+<header class="topbar">
+  <a href="#home" class="brand" data-magnetic>
+    <span class="brand__mark">AD</span>
+    <span class="brand__name">Archit Dudeja</span>
+  </a>
+
+  <nav class="navlinks" aria-label="Section navigation">
+    <a href="#home" class="navlink is-active" data-section="home" data-tag="Home">Home</a>
+    <a href="#experience" class="navlink" data-section="experience" data-tag="View experience">Experience</a>
+    <a href="#education" class="navlink" data-section="education" data-tag="View education">Education</a>
+    <a href="#skills" class="navlink" data-section="skills" data-tag="View toolkit">Skills</a>
+    <a href="#projects" class="navlink" data-section="projects" data-tag="View work">Projects</a>
+    <a href="#contact" class="navlink" data-section="contact" data-tag="Say hello">Contact</a>
   </nav>
+
+  <span class="status-pill">
+    <span class="status-pill__dot"></span> Open to new roles
+  </span>
 </header>
 
-<!-- hero area -->
-<section class="hero-area bg-primary" id="parallax">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 mx-auto">
-        <h1 class="text-white font-tertiary">Hi ! I’m <br> Archit Dudeja <br> Business Data Analyst</h1>
-        <a href="https://drive.google.com/file/d/1S_8bBAADVAan-sXZr38k7oAN9zoQVA25/view?usp=sharing" target="_blank" class="btn btn-danger">Resume</a>
-      </div>
-      <div class="col-lg-12 mx-auto">
-        <div class="scroll-to-next" id="scrollButton">
-          <img src="/images/scroll2.gif" alt="Scroll Down">
-          <img src="/images/scroll2.gif" alt="Scroll Down">
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="section hero">
+    <div class="hero__content">
+      <p class="eyebrow">Business Data Analyst</p>
+
+      <h1 class="hero__name">
+        Hi, I'm <span class="highlight">Archit Dudeja</span>
+      </h1>
+
+      <p class="hero__role">
+        <span id="roleText">Turning data into decisions</span><span class="cursor-blink">|</span>
+      </p>
+
+      <p class="hero__desc">
+        I'm a results-driven business analyst who enjoys the moment a messy dataset
+        turns into a dashboard someone actually wants to open. My work spans
+        healthcare analytics, supply-chain strategy and marketing performance —
+        with Tableau, Power BI, SQL and Python as my everyday tools, and a Master's
+        in Information Systems from the University of Utah in progress.
+      </p>
+
+      <div class="hero__actions">
+        <a href="https://drive.google.com/file/d/1S_8bBAADVAan-sXZr38k7oAN9zoQVA25/view?usp=sharing" target="_blank" rel="noopener" class="btn btn--primary" data-magnetic data-tag="Open résumé">
+          <span>View Résumé</span>
+          <i class="ti ti-arrow-up-right"></i>
+        </a>
+        <a href="#contact" class="btn btn--ghost" data-magnetic data-tag="Jump to contact">
+          <span>Get in Touch</span>
+          <i class="ti ti-send"></i>
+        </a>
       </div>
     </div>
-  </div>
-  </div>
-  
-  <div class="layer-bg w-100">
-    <img class="img-fluid w-100" src="images/illustrations/leaf-bg.png" alt="bg-shape">
-  </div>
-  <div class="layer" id="l2">
-    <img src="images/illustrations/dots-cyan.png" alt="bg-shape">
-  </div>
-  <div class="layer" id="l3">
-    <img src="images/illustrations/leaf-orange.png" alt="bg-shape">
-  </div>
-  <div class="layer" id="l4">
-    <img src="images/illustrations/dots-orange.png" alt="bg-shape">
-  </div>
-  <div class="layer" id="l5">
-    <img src="images/illustrations/leaf-yellow.png" alt="bg-shape">
-  </div>
-  <div class="layer" id="l6">
-    <img src="images/illustrations/leaf-cyan.png" alt="bg-shape">
-  </div>
-  <div class="layer" id="l7">
-    <img src="images/illustrations/dots-group-orange.png" alt="bg-shape">
-  </div>
-  <div class="layer" id="l8">
-    <img src="images/illustrations/leaf-pink-round.png" alt="bg-shape">
-  </div>
-  <div class="layer" id="l9">
-    <img src="images/illustrations/leaf-cyan-2.png" alt="bg-shape">
-  </div>
 
-  <!-- social icon -->
-  <ul class="social-icons">
-    <li><a class="github" href="https://github.com/architdudeja" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-    <li><a class="linkedin" href="https://www.linkedin.com/in/archit-dudeja/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-    <li><a class="email" href="mailto:archit.dudeja@outlook.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-  </ul>
-  <!-- /social icon -->
-</section>
-<!-- /hero area -->
-
-<section class="sect" id="sect">
-  <br>
-  <br>
-<div class="container py-8">
-  <!-- Navigation Tabs -->
-  <ul class="nav nav-tabs justify-content-center mb-4" id="sectionTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="experience-tab" data-bs-toggle="tab" 
-                  data-bs-target="#experience" type="button" role="tab">
-              Experience
-          </button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="education-tab" data-bs-toggle="tab" 
-                data-bs-target="#education" type="button" role="tab">
-            Education
-        </button>
-    </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="projects-tab" data-bs-toggle="tab" 
-                  data-bs-target="#projects" type="button" role="tab">
-              Projects
-          </button>
-      </li>
-      <li class="nav-item" role="presentation">
-          <button class="nav-link" id="skills-tab" data-bs-toggle="tab" 
-                  data-bs-target="#skills" type="button" role="tab">
-              Skills
-          </button>
-      </li>
-  </ul>
-
-<!-- Sections -->
-<div class="tab-content" id="sectionTabContent">
-  <!-- Experience Section -->
-  <div class="tab-pane fade show active" id="experience" role="tabpanel">
-      <div class="section-container">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-title sect-title" >Experience</h2>
-      </div>
-      <div class="col-lg-12 col-md-12">
-        <div class="experience-card">
-          <div class="left-section">
-            <img src="/images/experience/UofU.png" alt="Organization Logo">
-            <h3>University of Utah Health</h3>
-            <p>Business Intelligence Intern</p>
-          </div>
-          <div class="right-section">
-            <ul>
-              <li>Developed a Tableau dashboard to track revenue cycle KPIs, enabling leadership to identify optimization opportunities and achieve a 25%
-                revenue increase across 25 organizations</li>
-              <li>Spearheaded the migration of 23 SAP Business Objects reports into Tableau, improving cross-functional transparency and equipping
-                stakeholders with real-time insights into healthcare performance metrics like patient outcomes and operational efficiency</li>
-              <li>Partnered with data engineers to enhance SQL query performance, ensuring data accuracy and integrity, and improved processing times by
-                30% within the enterprise data warehouse</li>
-            </ul>
-          </div>
+    <div class="impact-console" aria-label="Highlight metrics">
+      <p class="impact-console__label"><i class="ti ti-chart-candle"></i> Impact console</p>
+      <div class="impact-console__grid">
+        <div class="metric-card" data-magnetic data-tag="Tableau storytelling">
+          <span class="metric-card__value"><span data-count="35" data-suffix="%">0%</span></span>
+          <span class="metric-card__label">Revenue lift from a Tableau storytelling dashboard</span>
         </div>
+        <div class="metric-card" data-magnetic data-tag="Supply-chain analysis">
+          <span class="metric-card__value"><span data-prefix="$" data-count="500" data-suffix="K">$0K</span></span>
+          <span class="metric-card__label">Annual savings identified through cost analysis</span>
         </div>
-      
-      <br>
-      <br>
-      
-      <div class="col-lg-12 col-md-12 ">
-        <div class="experience-card">
-          <div class="left-section">
-            <img src="/images/experience/Accenture.png" alt="Organization Logo">
-            <h3>Accenture</h3>
-            <p>Business Data Analyst</p>
-          </div>
-          <div class="right-section">
-            <ul>
-              <li>Collaborated with cross-functional teams to migrate Excel dashboards into Power BI dashboards, streamlining stakeholder processes and
-                reducing report generation time by 20%</li>
-              <li>Conducted cost analysis using Excel Pivots and Power BI, identifying $500K in annual savings through supply chain optimization while
-                presenting findings to senior leadership to drive strategic initiatives</li>
-              <li>Developed visualizations to track KPIs, including customer satisfaction and transportation costs, facilitating data-driven decision-making
-                and improved stakeholder collaboration across departments</li>
-              <li>Streamlined database performance using advanced SQL techniques, reducing dashboard load times and enhancing predictive insights,
-                which contributed to a 15% reduction in late shipments</li>
-            </ul>
-          </div>
+        <div class="metric-card" data-magnetic data-tag="SQL performance tuning">
+          <span class="metric-card__value"><span data-count="30" data-suffix="%">0%</span></span>
+          <span class="metric-card__label">Faster data processing after SQL optimisation</span>
+        </div>
+        <div class="metric-card" data-magnetic data-tag="LTV forecasting">
+          <span class="metric-card__value"><span data-count="40" data-suffix="%">0%</span></span>
+          <span class="metric-card__label">Better LTV forecast accuracy via A/B testing</span>
         </div>
       </div>
+      <svg class="impact-console__chart" viewBox="0 0 400 90" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--teal)" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="var(--teal)" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <polyline class="impact-area" fill="url(#areaFill)" points="0,80 0,60 50,65 100,45 150,55 200,30 250,38 300,15 350,22 400,5 400,90 0,90" />
+        <polyline class="impact-line" points="0,60 50,65 100,45 150,55 200,30 250,38 300,15 350,22 400,5" />
+      </svg>
+    </div>
+  </section>
 
-      <br>
-      <br>
-      <div class="col-lg-12 col-md-12 ">
-        <div class="experience-card">
-          <div class="left-section">
-            <img src="/images/experience/panch.png" alt="Organization Logo">
-            <h3>Panchtatva Advertising</h3>
-            <p>Data Analysis Intern</p>
-          </div>
-          <div class="right-section">
-            <ul>
-              <li> Enhanced forecast accuracy of customer lifetime value (LTV) by 40% through A/B testing and root cause analysis to help strategize a 2-year
-                growth plan, forecasting an increase in sales and orders</li>
-              <li>Increased ROAS (Revenue on Ad Spend) by 25% by migrating ad performance reporting to Power BI, enabling real-time cost-revenue
-              analysis through interactive data visualizations</li>
-              <li>Led product research using SWOT analysis and in-depth competition analysis to uncover spending trends and forecast customer churn,
-                delivering insights that improved strategic decision-making by 25%</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+  <!-- ============ TICKER ============ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span class="ticker__item"><i class="ti ti-trending-up"></i> 25% revenue growth at University of Utah Health</span>
+      <span class="ticker__item"><i class="ti ti-clock-bolt"></i> 20% faster reporting after Power BI migration</span>
+      <span class="ticker__item"><i class="ti ti-currency-dollar"></i> $500K in annual savings identified</span>
+      <span class="ticker__item"><i class="ti ti-chart-line"></i> 40% lift in customer LTV forecast accuracy</span>
+      <span class="ticker__item"><i class="ti ti-truck"></i> 15% reduction in late shipments</span>
+      <span class="ticker__item"><i class="ti ti-database"></i> 30% faster enterprise SQL queries</span>
+      <span class="ticker__item"><i class="ti ti-trending-up"></i> 25% revenue growth at University of Utah Health</span>
+      <span class="ticker__item"><i class="ti ti-clock-bolt"></i> 20% faster reporting after Power BI migration</span>
+      <span class="ticker__item"><i class="ti ti-currency-dollar"></i> $500K in annual savings identified</span>
+      <span class="ticker__item"><i class="ti ti-chart-line"></i> 40% lift in customer LTV forecast accuracy</span>
+      <span class="ticker__item"><i class="ti ti-truck"></i> 15% reduction in late shipments</span>
+      <span class="ticker__item"><i class="ti ti-database"></i> 30% faster enterprise SQL queries</span>
     </div>
   </div>
 
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section experience">
+    <div class="section__head">
+      <span class="section__index">01</span>
+      <h2 class="section__title">Case Files</h2>
+      <p class="section__sub">Three roles, three industries — drag or use the arrows to browse.</p>
+    </div>
 
+    <div class="caseload">
+      <div class="caseload__track" id="caseTrack">
 
-  <div class="tab-pane fade" id="projects" role="tabpanel">
-    <div class="section-container">
-        <div class="container">
-            <h2 class="sect-title text-center mb-5">Projects</h2>
+        <article class="case-card">
+          <div class="case-card__head">
+            <span class="case-card__file">Case 01</span>
+            <span class="case-card__metric"><i class="ti ti-trending-up"></i> +25% revenue</span>
+          </div>
+          <h3>Business Intelligence Intern</h3>
+          <p class="case-card__org">University of Utah Health</p>
+          <ul>
+            <li>Built a Tableau dashboard tracking revenue-cycle KPIs that helped leadership spot optimisation opportunities across 25 organisations, contributing to a 25% revenue increase.</li>
+            <li>Led the migration of 23 legacy SAP BusinessObjects reports into Tableau, giving stakeholders real-time visibility into patient outcomes and operational efficiency.</li>
+            <li>Worked alongside data engineers to tune SQL queries in the enterprise warehouse, lifting processing speed by 30% while protecting data accuracy.</li>
+          </ul>
+          <div class="case-card__tags"><span>Tableau</span><span>SQL</span><span>Data Warehousing</span></div>
+        </article>
 
-            <!-- Project Details Container -->
-            <div class="carousel-wrapper">
-              <button class="carousel-arrow left">&lt;</button>
-              <div class="carousel">
-                <div class="carousel-track">
-                  <!-- Slide 1 -->
-                  <div class="carousel-slide">
-                    <a href="https://public.tableau.com/app/profile/archit.dudeja3594/viz/CVDataAnalysis/Summary" target="_blank"> <h2>Cardiovascular Health Insights (Tableau Project)</h2></a>
-                    <h4>Data Visualization | Tableau</h4>
-                    <img src="/images/blog/Cardio Vascular.png" alt="Cardiovascular Health Insights">
-                    <div class="content">
-                      <p><strong>Project Overview:</strong> Analyzed health metrics of individuals who experienced cardiac events.</p>
-                      <h5>Business Impact</h5>
-                      <p>The project emphasizes identifying risk factors and aiding data-driven health decisions.</p>
-                      <h5>Data Integration</h5>
-                      <p>Combined data from multiple sources with 100% accuracy, utilizing data cleaning techniques to ensure reliability.</p>
-                      <h5>Key Performance Metrics</h5>
-                      <p>Devised dynamic parameterization and calculated metrics illuminating high-performing factors for executive decisions.</p>
-                    </div>
-                  </div>
-            
-                  <!-- Slide 2 -->
-                  <div class="carousel-slide">
-                    <a href="https://public.tableau.com/app/profile/archit.dudeja3594/viz/PatientPopulationAnalysis/Overview" target="_blank"><h2>Cancer Screening Dashboard</h2></a>
-                    <h4>Data Visualization | Tableau</h4>
-                    <img src="images/blog/Client Population.png" alt="Sales Analytics Dashboard">
-                    <div class="content">
-                      <p><strong>Project Overview:</strong> A dynamic dashboard to explore patterns in patient data, with a focus on cancer screening status.</p>
-                      <h5>Business Impact</h5>
-                      <p>Age and location trends in screenings.<br>
-                        Insights into how language, diversity, and time of year influence care patterns.<br>
-                        Connections between visit dates, providers, and visit locations.
-                      </p>
-                      <h5>Key Performance Metrics</h5>
-                      <p>🔍 Making one dashboard handle dynamic parameterization so all critical data points are at your fingertips.<br>
-                        📊 Analyzing relationships between patient demographics and provider interactions.<br>
-                        🌐 Visualizing patterns and trends that inform healthcare decisions.</p>
-                    </div>
-                  </div>
-                </div>
+        <article class="case-card">
+          <div class="case-card__head">
+            <span class="case-card__file">Case 02</span>
+            <span class="case-card__metric"><i class="ti ti-currency-dollar"></i> $500K saved</span>
+          </div>
+          <h3>Business Data Analyst</h3>
+          <p class="case-card__org">Accenture</p>
+          <ul>
+            <li>Partnered with cross-functional teams to rebuild Excel reporting as Power BI dashboards, cutting report turnaround time by 20%.</li>
+            <li>Ran cost analyses with Excel pivots and Power BI that uncovered $500K in annual supply-chain savings, presented directly to senior leadership.</li>
+            <li>Designed KPI visualisations for customer satisfaction and transportation costs, and tightened SQL performance to help cut late shipments by 15%.</li>
+          </ul>
+          <div class="case-card__tags"><span>Power BI</span><span>Excel</span><span>SQL</span></div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-card__head">
+            <span class="case-card__file">Case 03</span>
+            <span class="case-card__metric"><i class="ti ti-chart-line"></i> +40% LTV accuracy</span>
+          </div>
+          <h3>Data Analysis Intern</h3>
+          <p class="case-card__org">Panchtatva Advertising</p>
+          <ul>
+            <li>Improved customer lifetime value forecasts by 40% through A/B testing and root-cause analysis, feeding a two-year growth strategy.</li>
+            <li>Migrated ad-performance reporting into Power BI, lifting return on ad spend by 25% with real-time cost-vs-revenue views.</li>
+            <li>Ran SWOT and competitor research to uncover spending trends and churn signals, sharpening strategic planning by 25%.</li>
+          </ul>
+          <div class="case-card__tags"><span>Power BI</span><span>A/B Testing</span><span>Market Research</span></div>
+        </article>
+
+      </div>
+
+      <div class="caseload__controls">
+        <div class="caseload__dots" id="caseDots">
+          <span class="is-active"></span><span></span><span></span>
+        </div>
+        <div class="caseload__arrows">
+          <button class="arrow-btn" id="casePrev" aria-label="Previous case" data-magnetic><i class="ti ti-arrow-left"></i></button>
+          <button class="arrow-btn" id="caseNext" aria-label="Next case" data-magnetic><i class="ti ti-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section id="education" class="section education">
+    <div class="section__head">
+      <span class="section__index">02</span>
+      <h2 class="section__title">Transcript</h2>
+      <p class="section__sub">The credentials behind the dashboards.</p>
+    </div>
+
+    <div class="transcript-grid">
+      <article class="transcript-card" data-magnetic>
+        <span class="transcript-card__year">2023 – 2024</span>
+        <h3>Graduate Certificate in Business Analytics</h3>
+        <p class="transcript-card__school">University of Utah, David Eccles School of Business</p>
+        <span class="gpa-chip">GPA 4.0 / 4.0</span>
+        <ul>
+          <li>Coursework in machine learning and data mining</li>
+          <li>Teaching assistant in the Data Science Lab</li>
+        </ul>
+      </article>
+
+      <article class="transcript-card" data-magnetic>
+        <span class="transcript-card__year">2023 – 2024</span>
+        <h3>Master of Science in Information Systems</h3>
+        <p class="transcript-card__school">University of Utah, David Eccles School of Business</p>
+        <span class="gpa-chip">GPA 3.9 / 4.0</span>
+        <ul>
+          <li>Computer-science track focused on data structures</li>
+          <li>Technical lead for the college coding club</li>
+        </ul>
+      </article>
+
+      <article class="transcript-card" data-magnetic>
+        <span class="transcript-card__year">2017 – 2021</span>
+        <h3>B.Tech in Computer &amp; Communication Engineering</h3>
+        <p class="transcript-card__school">Manipal University Jaipur</p>
+        <span class="gpa-chip">GPA 8.07 / 10.0</span>
+        <ul>
+          <li>Built applied projects in Python and R</li>
+          <li>Advanced certification in machine learning</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section skills">
+    <div class="section__head">
+      <span class="section__index">03</span>
+      <h2 class="section__title">Toolkit</h2>
+      <p class="section__sub">Grouped the way I reach for it — by job to be done.</p>
+    </div>
+
+    <div class="toolkit-grid">
+
+      <article class="toolkit-panel" data-magnetic>
+        <div class="toolkit-panel__head">
+          <i class="ti ti-chart-dots-3"></i>
+          <h3>Visualization</h3>
+        </div>
+        <div class="eq-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="pill-row">
+          <span>Tableau</span><span>Power BI</span><span>Domo</span><span>Looker</span><span>Excel</span><span>Matplotlib</span>
+        </div>
+      </article>
+
+      <article class="toolkit-panel" data-magnetic>
+        <div class="toolkit-panel__head">
+          <i class="ti ti-code"></i>
+          <h3>Programming</h3>
+        </div>
+        <div class="eq-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="pill-row">
+          <span>Python</span><span>JavaScript</span><span>SQL</span><span>R</span><span>PHP</span>
+        </div>
+      </article>
+
+      <article class="toolkit-panel" data-magnetic>
+        <div class="toolkit-panel__head">
+          <i class="ti ti-database"></i>
+          <h3>Database Management</h3>
+        </div>
+        <div class="eq-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="pill-row">
+          <span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span><span>Oracle</span><span>SQLite</span>
+        </div>
+      </article>
+
+      <article class="toolkit-panel" data-magnetic>
+        <div class="toolkit-panel__head">
+          <i class="ti ti-flask"></i>
+          <h3>Data Analysis</h3>
+        </div>
+        <div class="eq-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="pill-row">
+          <span>Statistical Analysis</span><span>Machine Learning</span><span>Hypothesis Testing</span><span>Data Mining</span><span>A/B Testing</span><span>Time Series Forecasting</span>
+        </div>
+      </article>
+
+      <article class="toolkit-panel toolkit-panel--wide" data-magnetic>
+        <div class="toolkit-panel__head">
+          <i class="ti ti-briefcase"></i>
+          <h3>Business &amp; Product</h3>
+        </div>
+        <div class="eq-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="pill-row">
+          <span>Agile Methodology</span><span>Feature Engineering</span><span>Product Ownership</span><span>Product Management</span><span>Process Optimisation</span><span>Automation</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section projects">
+    <div class="section__head">
+      <span class="section__index">04</span>
+      <h2 class="section__title">Case Studies</h2>
+      <p class="section__sub">Two Tableau builds, two very different audiences.</p>
+    </div>
+
+    <div class="study-grid">
+
+      <article class="study-card" data-tilt>
+        <div class="study-card__visual" aria-hidden="true">
+          <svg viewBox="0 0 300 160" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="study1Fill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--gold)" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="var(--gold)" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <polyline class="study-area" fill="url(#study1Fill)" points="0,120 30,100 60,110 90,70 120,85 150,50 180,65 210,30 240,45 270,15 300,25 300,160 0,160" />
+            <polyline class="study-line study-line--gold" points="0,120 30,100 60,110 90,70 120,85 150,50 180,65 210,30 240,45 270,15 300,25" />
+            <circle class="study-dot study-dot--gold" cx="270" cy="15" r="4" />
+          </svg>
+        </div>
+        <div class="study-card__body">
+          <span class="study-card__tag">Data Visualization · Tableau</span>
+          <h3>Cardiovascular Health Insights</h3>
+          <p>A Tableau workbook examining health indicators for patients who experienced a cardiac event, built to surface risk factors that support clinical decision-making.</p>
+          <div class="study-card__stats">
+            <div>
+              <i class="ti ti-stethoscope"></i>
+              <div>
+                <h4>Business impact</h4>
+                <p>Highlights risk factors so care teams can act on data rather than intuition.</p>
               </div>
-              <button class="carousel-arrow right">&gt;</button>
             </div>
-                        </div>
-                    </div>
-                </div>
-
-
-    
-<div class="tab-pane fade" id="education" role="tabpanel">
-  <div class="section-container">
-      <div class="container">
-          <h2 class="sect-title text-center mb-5">Education</h2>
-          
-          <div class="education-timeline">
-              <div class="timeline-track"></div>
-
-              <!-- Masters Degree -->
-              <div class="education-card left">
-                  <span class="year-badge">2023 - 2024</span>
-                  <h3 class="degree-title">Graduate Certificate in Business Analytics</h3>
-                  <p class="institution">University of Utah</p>
-                  <ul class="achievements">
-                      <li>GPA: 4.0/4.0</li>
-                      <li>Machine Learning, Data Mining</li>
-                      <li>Teaching Assistant in Data Science Lab</li>
-                     
-                  </ul>
+            <div>
+              <i class="ti ti-database-import"></i>
+              <div>
+                <h4>Data integration</h4>
+                <p>Merged multiple source datasets with careful cleaning to keep accuracy at 100%.</p>
               </div>
-
-              <!-- Bachelors Degree -->
-              <div class="education-card right">
-                  <span class="year-badge">2023 - 2024</span>
-                  <h3 class="degree-title">Masters of Science in Information Systems</h3>
-                  <p class="institution">University of Utah</p>
-                  <ul class="achievements">
-                    <li>GPA: 3.9/4.0</li>
-                      <li>Major in Computer Science with focus on Data Structures</li>
-                      <li>Technical Lead of College Coding Club</li>
-                  </ul>
+            </div>
+            <div>
+              <i class="ti ti-adjustments"></i>
+              <div>
+                <h4>Key metrics</h4>
+                <p>Parameterised views and calculated fields spotlight the factors that matter most to leadership.</p>
               </div>
-
-              <!-- Additional Certification -->
-              <div class="education-card left">
-                  <span class="year-badge">2021</span>
-                  <h3 class="degree-title">Bachelors of Technology in Computer & Communication Engineering</h3>
-                  <p class="institution">Manipal University Jaipur</p>
-                  <ul class="achievements">
-                    <li>GPA: 8.07/10.0</li>
-                      <li>Developed real-world projects using Python and R</li>
-                      <li>Advanced certification in Machine Learning</li>
-                  </ul>
-              </div>
+            </div>
           </div>
-      </div>
-  </div>
-</div>
- 
-      <div class="tab-pane fade" id="skills" role="tabpanel">
-        <div class="section-container">
-            <h2 class="sect-title text-center mb-5">Skills</h2>
-            <div class="row g-4">
-                <!-- Visualization Card -->
-                <div class="col-md-4 col-lg-4">
-                    <div class="card skills-card">
-                        <div class="card-header">
-                            <h5 class="card-title">Visualization</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="skills-grid">
-                                <li><i class="fas fa-chart-bar"></i> Tableau</li>
-                                <li><i class="fas fa-chart-line"></i> Power BI</li>
-                                <li><i class="fas fa-chart-pie"></i> Domo</li>
-                                <li><i class="fas fa-chart-area"></i> Looker</li>
-                                <li><i class="fas fa-chart-column"></i> Excel</li>
-                                <li><i class="fab fa-python"></i> Matplotlib</li>
-                              </ul>
-                        </div>
-                    </div>
-                </div>
-               
+          <a href="https://public.tableau.com/app/profile/archit.dudeja3594/viz/CVDataAnalysis/Summary" target="_blank" rel="noopener" class="study-card__link" data-magnetic data-tag="Open on Tableau Public">
+            <i class="ti ti-external-link"></i> View on Tableau Public
+          </a>
+        </div>
+      </article>
 
-                <!-- Programming Card -->
-                <div class="col-md-4 col-lg-4">
-                    <div class="card skills-card">
-                        <div class="card-header">
-                            <h5 class="card-title">Programming</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="skills-grid">
-                                <li><i class="fab fa-python"></i> Python</li>
-                                <li><i class="fab fa-js"></i> JavaScript</li>
-                                <li><i class="fas fa-database"></i> SQL</li>
-                                <li><i class="fab fa-r-project"></i> R</li>
-                                <li><i class="fab fa-php"></i> PHP</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Database Management Card -->
-                <div class="col-md-4 col-lg-4">
-                  <div class="card skills-card">
-                      <div class="card-header">
-                          <h5 class="card-title">Database Management</h5>
-                      </div>
-                      <div class="card-body">
-                          <ul class="skills-grid">
-                              <li><i class="fas fa-database"></i> MySQL</li>
-                              <li><i class="fas fa-database"></i> PostgreSQL</li>
-                              <li><i class="fas fa-leaf"></i> MongoDB</li>
-                              <li><i class="fas fa-database"></i> Oracle</li>
-                              <li><i class="fas fa-database"></i> SQLite</li>
-                          </ul>
-                      </div>
-                  </div>
+      <article class="study-card" data-tilt>
+        <div class="study-card__visual" aria-hidden="true">
+          <svg viewBox="0 0 300 160">
+            <circle class="study-donut-bg" cx="150" cy="80" r="55" />
+            <circle class="study-donut-fg" cx="150" cy="80" r="55" />
+            <text x="150" y="86" class="study-donut-text">Screenings</text>
+          </svg>
+        </div>
+        <div class="study-card__body">
+          <span class="study-card__tag">Data Visualization · Tableau</span>
+          <h3>Cancer Screening Dashboard</h3>
+          <p>An interactive dashboard exploring patient population data, with a focus on cancer screening status, demographics and care patterns.</p>
+          <div class="study-card__stats">
+            <div>
+              <i class="ti ti-map-pin"></i>
+              <div>
+                <h4>Business impact</h4>
+                <p>Surfaces age and location trends in screening rates to guide outreach planning.</p>
               </div>
-
-                <!-- Data Analysis Card -->
-                <div class="col-md-6 col-lg-6 px-2">
-                    <div class="card skills-card">
-                        <div class="card-header">
-                            <h5 class="card-title">Data Analysis</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="skills-grid">
-                                <li><i class="fas fa-calculator"></i> Statistical Analysis</li>
-                                <li><i class="fas fa-brain"></i> Machine Learning</li>
-                                <li><i class="fas fa-chart-column"></i>Hypothesis Testing</li>
-                                <li><i class="fas fa-magnifying-glass-chart"></i> Data Mining</li>
-                                <li><i class="fas fa-arrow-trend-up"></i>A/B Testing</li>
-                                <li><i class="fas fa-cluster"></i>Time Series Forecasting</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-              
-               
-                
-
-                <!-- Tools & Frameworks Card -->
-                <div class="col-md-6 col-lg-6 px-2">
-                    <div class="card skills-card">
-                        <div class="card-header">
-                            <h5 class="card-title">Business & Product</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="skills-grid">
-                                <li><i class="fab fa-git-alt"></i> Agile Methodology</li>
-                                <li><i class="fab fa-docker"></i> Feature Engineering</li>
-                                <li><i class="fab fa-jenkins"></i> Product owner</li>
-                                <li><i class="fa-brands fa-product-hunt"></i> Product Management</li>
-                                <li><i class="fab fa-react"></i> Process Optimization</li>
-                                <li><i class="fab fa-vuejs"></i> Automation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
+            <div>
+              <i class="ti ti-language"></i>
+              <div>
+                <h4>Data integration</h4>
+                <p>Links visit dates, providers and locations with demographic and language data.</p>
+              </div>
+            </div>
+            <div>
+              <i class="ti ti-adjustments"></i>
+              <div>
+                <h4>Key metrics</h4>
+                <p>One dynamically parameterised dashboard keeps every critical data point one click away.</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://public.tableau.com/app/profile/archit.dudeja3594/viz/PatientPopulationAnalysis/Overview" target="_blank" rel="noopener" class="study-card__link" data-magnetic data-tag="Open on Tableau Public">
+            <i class="ti ti-external-link"></i> View on Tableau Public
+          </a>
         </div>
-    </div>
-</section>
-<!-- about -->
-<section class="sect-abt section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 mx-auto text-center">
-        
-        <a href="about.html" class="btn btn-primary">know more</a>
-      </div>
-    </div>
-  </div>
+      </article>
 
-<!-- contact -->
- <br>
- <br>
-<div class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Contact Me</h2>
-        
-      </div>
-      <div class="col-lg-8 mx-auto">
-        <div class="bg-white rounded text-center p-5 shadow-down">
-          <h4 class="mb-80">Contact Form</h4>
-          <form action="#" class="row">
-            <div class="col-md-6">
-              <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-md-6">
-              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>
-            </div>
-            <div class="col-12">
-              <textarea name="message" id="message" class="form-control px-0 mb-4"
-                placeholder="Type Message Here" required></textarea>
-            </div>
-            <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
-<!--/contact -->
+  </section>
 
-<!-- footer -->
-<footer class="bg-dark footer-section">
-  <div class="section" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h5 class="text-light">Email</h5>
-          <a href="mailto:archit.dudeja@outlook.com"><p class="text-white paragraph-lg font-secondary">archit.dudeja@outlook.com</p></a>
-        </div>
-        
-        <div class="col-md-6">
-          <h5 class="text-light">Linkedin</h5>
-          <a href="https://www.linkedin.com/in/archit-dudeja"><p class="text-white paragraph-lg font-secondary">https://www.linkedin.com/in/archit-dudeja</p></a>
-        </div>
-      </div>
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section contact">
+    <div class="section__head section__head--center">
+      <span class="section__index">05</span>
+      <h2 class="section__title">Let's Talk Data</h2>
+      <p class="section__sub">Open to business analyst &amp; BI roles — and always happy to compare notes on a good dashboard.</p>
     </div>
-  </div>
- 
+
+    <div class="contact__grid">
+      <a class="contact-card" href="mailto:archit.dudeja@outlook.com" data-magnetic data-tag="Send an email">
+        <i class="ti ti-mail"></i>
+        <span class="contact-card__label">Email</span>
+        <span class="contact-card__value">archit.dudeja@outlook.com</span>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/archit-dudeja/" target="_blank" rel="noopener" data-magnetic data-tag="Visit LinkedIn">
+        <i class="ti ti-brand-linkedin"></i>
+        <span class="contact-card__label">LinkedIn</span>
+        <span class="contact-card__value">/in/archit-dudeja</span>
+      </a>
+      <a class="contact-card" href="https://github.com/architdudeja" target="_blank" rel="noopener" data-magnetic data-tag="Visit GitHub">
+        <i class="ti ti-brand-github"></i>
+        <span class="contact-card__label">GitHub</span>
+        <span class="contact-card__value">/architdudeja</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Archit Dudeja — designed like a dashboard, built like a report.</p>
 </footer>
-<!-- /footer -->
 
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-
-<!-- Main Script -->
-<script src="js/script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
